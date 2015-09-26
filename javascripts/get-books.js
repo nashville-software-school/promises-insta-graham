@@ -24,7 +24,7 @@ define(function(require) {
             I'm using the lodash `find()` method here.
               https://lodash.com/docs#find
            */
-          var books = books.map(book => {
+          books = books.map(book => {
             book.type = _.find(types, { id:book.booktype }).label;
             return book;
           });
