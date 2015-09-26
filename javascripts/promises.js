@@ -22,13 +22,20 @@ requirejs(
     //   });
     // });
 
+    var myBooks;
+
     books.booksXHR()
       .then(function(books) {
         console.log("API call successful and responded with", books);
+        myBooks = books;
         return types.typesXHR(books);
       })
       .then(function(types) {
         console.log("2nd API call successful and responded with", types);
+        // console.log(myBooks);
+        require(['hbs!../templates/books'], function(bookTpl) {
+          $("#bookList").html(bookTpl({ bookObj:myBooks }));
+        });
       });
 
 

@@ -10,7 +10,8 @@ define(function(require) {
       $.ajax("https://nss-book-store.firebaseio.com/books.json")
           // XHR was successful
         .done(function(books) {
-          // Now we can resolve the promise and send the data
+          books = Object.keys( books ).map(key => books[ key ]);
+
           deferred.resolve(books);
         })
 
