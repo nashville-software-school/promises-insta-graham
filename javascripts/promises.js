@@ -13,8 +13,8 @@ requirejs.config({
 });
 
 requirejs(
-  ["jquery", "hbs", "bootstrap", "q", "get-books"],
-  function($, Handlebars, bootstrap, Q, books) {
+  ["jquery", "hbs", "bootstrap", "q", "get-books", "get-booktypes"],
+  function($, Handlebars, bootstrap, Q, books, types) {
 
     // books.load(function(bookArray) {
     //   require(['hbs!../templates/books'], function(bookTpl) {
@@ -25,12 +25,11 @@ requirejs(
     books.booksXHR()
       .then(function(books) {
         console.log("API call successful and responded with", books);
-        // return secondXHR(data1);
+        return types.typesXHR(books);
+      })
+      .then(function(types) {
+        console.log("2nd API call successful and responded with", types);
       });
-      // .then(function(data2) {
-      //   return thirdXHR(data2);
-      // })
-      // .done();
 
 
 
