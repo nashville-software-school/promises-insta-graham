@@ -24,14 +24,14 @@ requirejs(
       return getBooks.getBooks();
     })
     .then(function(booksAjax){
-      console.log(booksAjax);
-      console.log(bookTypes);
+      // console.log(booksAjax);
+      // console.log(bookTypes);
 
       bookTypes = Object.keys( bookTypes ).map(key => bookTypes[ key ]);
       booksAjax = Object.keys( booksAjax ).map(key => booksAjax[ key ]);
 
-      console.log("booksAjax", booksAjax);
-      console.log(bookTypes);
+      // console.log("booksAjax", booksAjax);
+      // console.log(bookTypes);
 
       booksAjax = booksAjax.map(book => {
         book.type = _.find(bookTypes, { id:book.booktype }).label;

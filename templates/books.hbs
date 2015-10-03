@@ -1,4 +1,11 @@
 {{#each books}}
-  <h3>{{ title }}</h3>
-  <section>{{ type }}</section>
+  <div class="col-md-4">
+    <h3>{{ title }}</h3>
+    <h4>{{ author }}, {{ year }}</h4>
+    <p>{{ synopsis }}</p>
+    <footer>
+      <h5>{{ type }}</h5>
+      <h6>Publisher : {{ publisher }}</h6>
+    </footer>
+  </div>
 {{/each}}
