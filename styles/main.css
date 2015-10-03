@@ -1,4 +1,12 @@
 .book-container {
   margin-top: 51px; }
 
+.n-child div:nth-child(2n+0) {
+  background-color: #007399;
+  color: #869FA6; }
+
+.n-child div:nth-child(2n+1) {
+  background: #5A4D51;
+  color: #999332; }
+
 /*# sourceMappingURL=main.css.map */
